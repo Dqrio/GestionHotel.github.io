@@ -7,6 +7,8 @@ use Illuminate\Support\Facades\Route;
 //Welcome
 Route::get('/', [WelcomeController::class, 'index'])->name('welcome');
 
+
+
 // Habitaciones
 Route::get('/habitaciones', [HabitacionesController::class, 'index'])->name('habitaciones.index');
 
@@ -26,6 +28,8 @@ Route::delete('/habitaciones/destroy/{id}', [HabitacionesController::class, 'des
 
 // Reservas
 Route::get('/reservas', [ReservaController::class, 'index'])->name('modules.reservas.index');
+
+Route::get('/reservas/filtrar', [ReservaController::class, 'filtrar'])->name('reservas.filtrar');
 
 Route::get('/reservas/create', [ReservaController::class, 'create'])->name('modules.reservas.create');
 Route::post('reservas/store', [ReservaController::class, 'store'])->name('store');

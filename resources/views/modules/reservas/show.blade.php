@@ -1,5 +1,6 @@
 @extends('layouts.main')
 @section('title', 'CRUD - Reservas | Show')
+@section('contenido')
 
 <div class="container -mt-4 mb-4">
     <h2 name="titulo" class="text-center" style="color: white; font-size: 2rem;">Detalles de Reserva</h2>
@@ -30,13 +31,12 @@
                                     <td>{{ $reserva->nombre_huesped }}</td>
                                     <td>{{ $reserva->numero_documento }}</td>
                                     <td>{{ $reserva->direccion }}</td>
-                                    <td>{{ date('d/m/Y', strtotime($reserva->fecha_entrada)) }}</td>
-                                    <td>{{ date('d/m/Y', strtotime($reserva->fecha_salida)) }}</td>
+                                    <td>{{ \Carbon\Carbon::parse($reserva->fecha_entrada)->format('d F, Y') }}</td>                                    
+                                    <td>{{ \Carbon\Carbon::parse($reserva->fecha_salida)->locale('es')->format('d F, Y') }}</td>   
                                     <td>{{ $reserva->numero_huespedes }}</td>
                                     <td>{{ $reserva->ninos }}</td>
                                     <td>{{ $reserva->tipo_habitacion }}</td>
-                                    <td>{{ $reserva->monto_total }}</td>
-                                    <td>{{ $reserva->estado }}</td>
+                                    <td>${{ number_format($reserva->monto_total, 0, ',', '.') }}</td>                                    <td>{{ $reserva->estado }}</td>
                                     
                                 </tr>
                             </tbody>
@@ -48,3 +48,4 @@
         </div>
     </div>
 </div>
+@endsection 

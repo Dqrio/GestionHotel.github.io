@@ -85,4 +85,11 @@ return to_route('habitaciones.index');
         $habitaciones->delete();
         return to_route('modules.habitaciones.index');
     }
+    public function obtenerHabitacionesDisponibles( )
+    {
+        // Obtener el número de habitaciones disponibles
+        $habitacionesDisponibles = Habitaciones::where('estado', 'Disponible')->count();
+        // Pasar la variable a la vista
+        return view('welcome', compact('habitacionesDisponibles'));
+    }
 }
