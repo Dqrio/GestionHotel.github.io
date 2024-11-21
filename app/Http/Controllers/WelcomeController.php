@@ -91,7 +91,7 @@ class WelcomeController extends Controller
         return Reservas::where('estado', 'Activa')  // O el estado que sea pertinente
                        ->where('fecha_entrada', '>=', now()->subDays(1))  // Reservas de los últimos 7 días
                        ->orderBy('fecha_entrada', 'desc')  // Ordenar por fecha de entrada
-                       ->take(5)  // Tomar las 5 más recientes
+                       ->take(1)  // Tomar las 5 más recientes
                           ->paginate();
     }
 }

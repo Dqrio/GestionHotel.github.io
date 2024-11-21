@@ -16,9 +16,9 @@ class CreateHabitacionesTable extends Migration
         Schema::create('habitaciones', function (Blueprint $table) {
             $table->id(); // Campo de ID
             $table->string('numero_habitacion')->unique(); // Número de la habitación
-            $table->enum('tipo_habitacion',['Apartamento','Casa'] ); // Tipo de habitación
+            $table->enum('tipo_habitacion',['individual','doble','suite'] ); // Tipo de habitación
             $table->integer('precio') ; // Precio de la habitación
-            $table->enum('estado', ['Disponible', 'Ocupada', 'Reservada', 'Mantenimiento', 'Fuera De Servicio', 'En construcción']); // Estado de la habitación
+            $table->enum('estado', ['Disponible', 'Ocupada', 'Reservada', 'Mantenimiento', 'Fuera De Servicio']); // Estado de la habitación
             $table->integer('capacidad'); // Capacidad de la habitación
             $table->text('caracteristicas')->nullable(); // Características de la habitación
             $table->timestamps(); // Campos created_at y updated_at

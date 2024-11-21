@@ -15,8 +15,9 @@
                         <label for="tipo_habitacion">Tipo de Habitación</label>
                         <select name="tipo_habitacion" id="tipo_habitacion" class="form-control" required>
                             <option value="">Seleccionar</option>
-                            <option value="Casa">Casa</option>
-                            <option value="Apartamento">Apartamento</option>
+                            <option value="individual">Individual</option>
+                            <option value="doble">Doble</option>
+                            <option value="suite">Suite</option>
                         </select>
 
                         
@@ -30,7 +31,6 @@
                             <option value="3">Reservada</option>
                             <option value="4">Mantenimiento</option>
                             <option value="5">Fuera de Servicio</option>
-                            <option value="6">En Construcción</option>   
                         </select>
 
                         <label for="capacidad">Capacidad</label>

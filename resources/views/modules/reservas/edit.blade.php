@@ -38,11 +38,11 @@
                         <div class="row mb-3">
                             <div class="col-md-6">
                                 <label for="fecha_entrada" class="form-label">Fecha de Entrada *</label>
-                                <input type="date" class="form-control" id="fecha_entrada" name="fecha_entrada" required value="{{ date('d/m/Y', strtotime($reserva->fecha_entrada)) }}">
+                                <input type="date" class="form-control flatpickr" id="fecha_entrada" name="fecha_entrada" required value="{{ date('d/m/Y', strtotime($reserva->fecha_entrada)) }}">
                             </div>
                             <div class="col-md-6">
                                 <label for="fecha_salida" class="form-label">Fecha de Salida *</label>
-                                <input type="date" class="form-control" id="fecha_salida" name="fecha_salida" required value="{{ date('d/m/Y', strtotime($reserva->fecha_salida)) }}">
+                                <input type="date" class="form-control flatpickr" id="fecha_salida" name="fecha_salida" required value="{{ date('d/m/Y', strtotime($reserva->fecha_salida)) }}">
                             </div>
                         </div>
 
@@ -117,4 +117,19 @@
         </div>
     </div>
 </div>
+<script>
+    // Inicializa flatpickr en los campos de fecha
+    // Inicializa flatpickr en los campos de fecha
+    document.addEventListener('DOMContentLoaded', function () {
+        flatpickr('.flatpickr', {
+            dateFormat: 'Y-m-d',  // Formato de fecha que se enviará al servidor
+            altFormat: 'j F, Y',  // Formato que se mostrará en el campo (día completo, mes con letras, año)
+            altInput: true,        // Utiliza un campo alternativo para mostrar la fecha en letras
+            minDate: 'today',      // Limitar para que solo se pueda seleccionar una fecha futura
+            disableMobile: true,   // Deshabilitar la vista móvil
+            locale: 'es',          // Establece el idioma en español
+        });
+    });
+    
+    </script>
 @endsection
