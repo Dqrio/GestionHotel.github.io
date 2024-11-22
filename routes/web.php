@@ -1,11 +1,11 @@
 <?php
 
-use App\Http\Controllers\WelcomeController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HabitacionesController;
 use App\Http\Controllers\ReservaController;
 use Illuminate\Support\Facades\Route;
-//Welcome
-Route::get('/', [WelcomeController::class, 'index'])->name('welcome');
+//Dashboard
+Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
 
 

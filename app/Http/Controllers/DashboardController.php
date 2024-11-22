@@ -6,7 +6,7 @@ use App\Models\Reservas;  // Asegúrate de importar el modelo de Reservas
 use App\Models\Habitaciones;
 use Illuminate\Http\Request;
 
-class WelcomeController extends Controller
+class DashboardController extends Controller
 {
     // Función principal que se llama en la vista
     public function index()
@@ -27,7 +27,7 @@ class WelcomeController extends Controller
         $reservasRecientes = $this->reservasRecientes();
 
         // Pasar todas las variables a la vista
-        return view('welcome', compact(
+        return view('dashboard', compact(
             'habitacionesDisponibles',
             'reservasHoy',
             'reservasActuales',

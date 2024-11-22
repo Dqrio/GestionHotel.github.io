@@ -60,7 +60,7 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="main-navbar">
         <div class="container-fluid">
-            <a class="navbar-brand" href="{{ route('welcome') }}">
+            <a class="navbar-brand" href="{{ route('dashboard') }}">
                 <i class="fas fa-hotel me-2"></i>
                 Hotel Bolivar
             </a>
@@ -87,7 +87,7 @@
                 <div class="position-sticky pt-3">
                     <ul class="nav flex-column">
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('welcome') }}">
+                            <a class="nav-link" href="{{ route('dashboard') }}">
                                 <i class="fas fa-tachometer-alt me-2"></i>
                                 Dashboard
                             </a>
