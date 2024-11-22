@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\HuespedController;
+use app\Http\Controllers\ReporteController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HabitacionesController;
 use App\Http\Controllers\ReservaController;
@@ -41,3 +43,8 @@ Route::get('/reservas/edit/{id}', [ReservaController::class, 'edit'])->name('res
 Route::put('/reservas/update/{id}', [ReservaController::class, 'update'])->name('reservas.update');
 
 Route::delete('/reservas/destroy/{id}', [ReservaController::class, 'destroy'])->name('reservas.destroy');
+
+
+
+//Huespedes
+Route::get('/huesped', [HuespedController::class, 'index'])->name('modules.huesped.index');
